@@ -1,0 +1,123 @@
+
+digraph "test-01"
+{
+struct1 [label="program"]
+struct2 [label="statement_list"]
+struct3 [label="statement"]
+struct4 [label="declaration_statement"]
+struct5 [label="int_declaration"]
+struct6 [label="int"]
+struct5->struct6
+struct7 [label="variable_id"]
+struct8 [label="x"]
+struct7->struct8
+struct5->struct7
+struct4->struct5
+struct3->struct4
+struct9 [label=";"]
+struct3->struct9
+struct2->struct3
+struct10 [label="statement_list"]
+struct11 [label="statement"]
+struct12 [label="declaration_statement"]
+struct13 [label="bool_declaration"]
+struct14 [label="bool"]
+struct13->struct14
+struct15 [label="variable_id"]
+struct16 [label="q"]
+struct15->struct16
+struct13->struct15
+struct12->struct13
+struct11->struct12
+struct17 [label=";"]
+struct11->struct17
+struct10->struct11
+struct18 [label="statement_list"]
+struct19 [label="statement"]
+struct20 [label="assignment_statement"]
+struct21 [label="variable_id"]
+struct22 [label="x"]
+struct21->struct22
+struct20->struct21
+struct23 [label="="]
+struct20->struct23
+struct24 [label="expression"]
+struct25 [label="disjunction"]
+struct26 [label="conjunction"]
+struct27 [label="equality"]
+struct28 [label="relational"]
+struct29 [label="add_sub"]
+struct30 [label="mult_div_mod"]
+struct31 [label="unary_minus"]
+struct32 [label="exponent"]
+struct33 [label="negation"]
+struct34 [label="primary_expr"]
+struct35 [label="value"]
+struct36 [label="integer"]
+struct37 [label="5"]
+struct36->struct37
+struct35->struct36
+struct34->struct35
+struct33->struct34
+struct32->struct33
+struct31->struct32
+struct30->struct31
+struct29->struct30
+struct28->struct29
+struct27->struct28
+struct26->struct27
+struct25->struct26
+struct24->struct25
+struct20->struct24
+struct19->struct20
+struct38 [label=";"]
+struct19->struct38
+struct18->struct19
+struct39 [label="statement_list"]
+struct40 [label="statement"]
+struct41 [label="assignment_statement"]
+struct42 [label="variable_id"]
+struct43 [label="q"]
+struct42->struct43
+struct41->struct42
+struct44 [label="="]
+struct41->struct44
+struct45 [label="expression"]
+struct46 [label="disjunction"]
+struct47 [label="conjunction"]
+struct48 [label="equality"]
+struct49 [label="relational"]
+struct50 [label="add_sub"]
+struct51 [label="mult_div_mod"]
+struct52 [label="unary_minus"]
+struct53 [label="exponent"]
+struct54 [label="negation"]
+struct55 [label="primary_expr"]
+struct56 [label="variable_id"]
+struct57 [label="true"]
+struct56->struct57
+struct55->struct56
+struct54->struct55
+struct53->struct54
+struct52->struct53
+struct51->struct52
+struct50->struct51
+struct49->struct50
+struct48->struct49
+struct47->struct48
+struct46->struct47
+struct45->struct46
+struct41->struct45
+struct40->struct41
+struct58 [label=";"]
+struct40->struct58
+struct39->struct40
+struct59 [label="statement_list"]
+struct60 [label="epsilon"]
+struct59->struct60
+struct39->struct59
+struct18->struct39
+struct10->struct18
+struct2->struct10
+struct1->struct2
+}

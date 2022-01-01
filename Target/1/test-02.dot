@@ -1,0 +1,67 @@
+
+digraph "test-02"
+{
+struct1 [label="program"]
+struct2 [label="statement_list"]
+struct3 [label="statement"]
+struct4 [label="declaration_statement"]
+struct5 [label="int_declaration"]
+struct6 [label="int"]
+struct5->struct6
+struct7 [label="variable_id"]
+struct8 [label="x"]
+struct7->struct8
+struct5->struct7
+struct4->struct5
+struct3->struct4
+struct9 [label=";"]
+struct3->struct9
+struct2->struct3
+struct10 [label="statement_list"]
+struct11 [label="statement"]
+struct12 [label="assignment_statement"]
+struct13 [label="variable_id"]
+struct14 [label="x"]
+struct13->struct14
+struct12->struct13
+struct15 [label="="]
+struct12->struct15
+struct16 [label="expression"]
+struct17 [label="disjunction"]
+struct18 [label="conjunction"]
+struct19 [label="equality"]
+struct20 [label="relational"]
+struct21 [label="add_sub"]
+struct22 [label="mult_div_mod"]
+struct23 [label="unary_minus"]
+struct24 [label="exponent"]
+struct25 [label="negation"]
+struct26 [label="primary_expr"]
+struct27 [label="value"]
+struct28 [label="integer"]
+struct29 [label="1"]
+struct28->struct29
+struct27->struct28
+struct26->struct27
+struct25->struct26
+struct24->struct25
+struct23->struct24
+struct22->struct23
+struct21->struct22
+struct20->struct21
+struct19->struct20
+struct18->struct19
+struct17->struct18
+struct16->struct17
+struct12->struct16
+struct11->struct12
+struct30 [label=";"]
+struct11->struct30
+struct10->struct11
+struct31 [label="statement_list"]
+struct32 [label="epsilon"]
+struct31->struct32
+struct10->struct31
+struct2->struct10
+struct1->struct2
+}

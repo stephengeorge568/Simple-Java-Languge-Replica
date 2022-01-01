@@ -1,0 +1,4 @@
+int x;
+bool q;
+x = 5;
+q = true;

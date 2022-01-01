@@ -1,0 +1,91 @@
+USE_LR_PARSER
+
+program
+
+(* ======================================================================================================= *)
+<program>               ::= <statement_list>                                    .
+
+<statement_list>        ::= <statement> <statement_list> | <epsilon>            .
+
+<statement>             ::= <declaration_statement> ";"
+                            | <assignment_statement> ";"
+                            | <condition_statement>
+                            | <iterative_statement>
+                            | <block_statement>
+                            | <print_statement> ";"
+                            | <pre_post_statement> ";"                          .
+
+<declaration_statement> ::= <bool_declaration> | <int_declaration>              .
+
+<bool_declaration>      ::= "bool" variable_id                                .
+
+<int_declaration>       ::= "int" variable_id                                 .
+
+<assignment_statement>  ::= variable_id "=" <expression>                      .
+
+<condition_statement>   ::= <if_then> | <if_then_else>                          .
+
+<if_then>               ::= "if" "(" <expression> ")" <block_statement>         .
+
+<if_then_else>          ::= "if" "(" <expression> ")" <block_statement> "else"
+                                <block_statement>                               .
+
+<iterative_statement>   ::= <while_loop> | <for_loop>                           .
+
+<while_loop>            ::= "while" "(" <expression> ")" <block_statement>      .
+
+<for_loop>              ::= "for" "(" <assignment_statement> ";" <expression>
+                                ";" <pre_post_statement> ")" <block_statement>  .
+
+<block_statement>       ::= "{" <statement_list> "}"                            .
+
+<print_statement>       ::= "print" "(" <expression> ")"                        .
+
+<pre_post_statement>    ::= variable_id "++" | variable_id "--"
+                            | "++" variable_id | "--" variable_id               .
+
+<expression>            ::= <disjunction>                                       .
+
+<disjunction>            ::= <disjunction> "or" <conjunction> 
+                            | <conjunction>                                     .
+
+<conjunction>           ::= <conjunction> "and" <equality>
+                            | <equality>                                        .
+
+<equality>              ::= <equality> "==" <relational>
+                            | <equality> "!=" <relational>
+                            | <relational>                                      .
+
+<relational>            ::= <relational> ">" <add_sub>
+                            | <relational> "<" <add_sub>
+                            |<relational> ">=" <add_sub>
+                            | <relational> "<=" <add_sub>
+                            | <add_sub>                                         .
+
+<add_sub>               ::= <add_sub> "+" <mult_div_mod>
+                            | <add_sub> "-" <mult_div_mod>
+                            | <mult_div_mod>                                    .
+
+<mult_div_mod>          ::= <mult_div_mod> "*" <unary_minus>
+                            | <mult_div_mod> "/" <unary_minus>
+                            | <mult_div_mod> "%" <unary_minus>
+                            | <unary_minus>                                     .
+
+<unary_minus>           ::= "-" <unary_minus>
+                            | <exponent>                                        .
+
+<exponent>              ::= <negation> "^" <exponent>
+                            | <negation>                                        .
+
+<negation>              ::= "!" <negation>
+                            | <primary_expr>                                    .
+
+<primary_expr>          ::= variable_id
+                            | <value>
+                            | <pre_post_statement>
+                            | "(" <expression> ")"
+                            | "|" <expression> "|"                              .
+<value>                 ::= integer
+                            |boolean                                            .
+
+<epsilon>               ::=                                                     .
